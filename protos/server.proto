@@ -1,0 +1,26 @@
+
+syntax = "proto3";
+package routeguide;
+
+service RouteGuide {
+  rpc GetUserInfo(userId) returns (userInfo) {}
+}
+
+//定义接收参数的类型  字段
+message userId {
+  int32 id = 1;
+}
+
+//数字要按顺序写
+message MenuModel {
+  int32 id = 1;
+  string username = 2;
+  string password = 3;
+  int32 isadmin = 4;
+}
+
+//定义返回前台的信息参数类型  字段
+message userInfo {
+  repeated MenuModel name = 1;
+}
+
